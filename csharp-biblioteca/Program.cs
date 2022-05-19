@@ -19,6 +19,8 @@ namespace csharp_biblioteca
         {
             //biblioteca
             biblioteca b = new biblioteca("Biblioteca Comunale");
+            Console.WriteLine("Benvenuti nella nostra biblioteca");
+            Console.WriteLine("nome  {0}", b.Nome);
             //scaffale
             scaffale scaffale = new scaffale("S001");
             //libri
@@ -31,17 +33,18 @@ namespace csharp_biblioteca
             dvd dvd1 = new dvd("Codice1", "Titolo 3", 2019, "Storia", 130);
             b.Documenti.Add(dvd1);
            
+            //utente registrato
             utente u1 = new utente("Ciro", "Immobile", "Telefono 1", "Email 1", "Password 1");
 
             b.Utenti.Add(u1);
-
+            //prestito utente registrato
             prestito p1 = new prestito("P00001", new DateTime(2022, 5, 18), new DateTime(2022, 5, 19), u1, l1);
 
             b.Prestiti.Add(p1);
 
-            Console.WriteLine("\n\nSearchByCodice: ISBN1\n\n");
+            Console.WriteLine("\n\nfiltro ricerca del codice : i1i1i1i1\n\n");
 
-            List<documento> results = b.SearchByCodice("ISBN1");
+            List<documento> results = b.SearchByCodice("i1i1i1i1");
 
             foreach (documento doc in results)
             {
@@ -60,9 +63,13 @@ namespace csharp_biblioteca
                 }
             }
 
-            Console.WriteLine("\n\nSearchPrestiti per : Nome 1, Cognome 1\n\n");
+            Console.WriteLine("\n\nSearchPrestiti per : inserire nome , inserire cognome\n\n");
 
-            List<prestito> prestiti = b.SearchPrestiti("Ciro", "Immobile");
+            string inserireNome = Console.ReadLine();
+            string inserireCognome = Console.ReadLine();
+
+            //prova ad inserire Ciro Immobile
+            List<prestito> prestiti = b.SearchPrestiti(inserireNome, inserireCognome);
 
             foreach (prestito p in prestiti)
             {
