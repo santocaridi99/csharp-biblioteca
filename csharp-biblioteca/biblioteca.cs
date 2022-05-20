@@ -16,6 +16,8 @@ namespace csharp_biblioteca
         public List<utente> Utenti { get; set; }
         public ListaUtenti MiaListaUtenti { get; set; }
 
+        
+
 
         public biblioteca(string Nome)
         {
