@@ -138,7 +138,7 @@ namespace csharp_biblioteca
             utente u1 = new utente(nome, cognome, tel , mail, pass);
             b.Utenti.Add(u1);
             //per prima cosa leggo gli utenti da file
-            b.RestoreUtenti(publicEnv + "\\biblioteca" + "\\biblioteca.txt", u1);
+            b.RestoreUtenti(publicEnv + "\\biblioteca" + "\\biblioteca.txt");
            
            
             //prestito utente registrato

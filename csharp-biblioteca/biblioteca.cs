@@ -53,7 +53,7 @@ namespace csharp_biblioteca
 
         }
 
-        public void RestoreUtenti(string filename , utente user)
+        public void RestoreUtenti(string filename)
         {
             //Ricostruisce la lista degli utenti leggendo il file su cui sono salvati
             string line;
@@ -67,8 +67,6 @@ namespace csharp_biblioteca
                 while (line != null)
                 {
                     line.Split(";");
-
-                    this.Utenti.Add(user);
                     //Read the next line
                     line = sr.ReadLine();
                 }
